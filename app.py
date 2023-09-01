@@ -61,13 +61,13 @@ st.subheader("The Equation is : %dx + %d = %dy" % (a, c, b))
 #----Solution Output---------
 
 if ((a==0) and (b==0) and (c==0)) :
-    st.subheader("Infinitely many solutions are possible for (x, y)")
+    st.subheader("Infinitely many solutions are possible for (x) & (y)")
 elif ((abs(c) % gcd(abs(a), abs(b)) != 0)) :
-    st.subheader("No solution possible for (x, y), as gcd(%d) of a(%d) and b(%d) doesn't divide c(%d)" % (gcd(a, b), a, b, c))
+    st.subheader("No possible solutions for (x) & (y), as gcd(%d) of a(%d) and b(%d) doesn't divide c(%d)" % (gcd(a, b), a, b, c))
 elif ((a==b) and (a==c)) :
-    st.subheader("%d * 0 + %d = %d * 1 = %d" % (a, c, b, b))
-    st.subheader("Solution for (x, y) is (0.0, 1.0)")
+    st.subheader("(%d * 0) + %d = (%d * 1) = %d" % (a, c, b, b))
+    st.subheader("Solution is (x = 0) & (y = 1)")
 else:
     soln = kuttakaSolve(a, c, b)
-    st.subheader("%d * %d + %d = %d * %d = %d" % (a, soln[0], c, b, soln[1], b * soln[1]))
-    st.subheader("Solution for (x, y) is " + str(soln))
+    st.subheader("(%d * %d) + %d = (%d * %d) = %d" % (a, soln[0], c, b, soln[1], b * soln[1]))
+    st.subheader("Solution is (x = %d) & (y = %d)" % (soln[0], soln[1]))
