@@ -10,10 +10,10 @@ def gcd(a, b):
 def kuttakaSolve(a, c, b):
     A, B, C = abs(a), abs(b), abs(c)
     if((A>=B) and (C>=B) and ((C % gcd(A,B)) == 0) and (gcd(A,B) != 1)) :
-        x, y = 0, (C/B)
+        x, y = 0, (c/b)
         return (x, y)
     elif(B == 1) :
-        x, y = 0, C
+        x, y = 0, c
         return (x, y)
     else :
         _gcd = gcd(A, gcd(B, C))
