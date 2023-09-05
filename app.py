@@ -64,8 +64,8 @@ st.write('b is ', b)
 st.subheader("The Equation is : %dx + %d = %dy" % (a, c, b))
 #----Solution Output---------
 
-if ((a==0) and (b==0) and (c==0)) :
-    st.subheader("Infinitely many solutions are possible for (x) & (y)")
+if ((a==0) or (b==0) or (c==0)) :
+    st.subheader("Equation entered is not in the form of a Linear Diophantine Equation")
 elif ((abs(c) % gcd(abs(a), abs(b)) != 0)) :
     st.subheader("No possible solutions for (x) & (y), as gcd(%d) of a(%d) and b(%d) doesn't divide c(%d)" % (gcd(a, b), a, b, c))
 #elif ((a==b) and (a==c)) :
