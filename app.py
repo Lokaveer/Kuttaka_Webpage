@@ -12,6 +12,9 @@ def kuttakaSolve(a, c, b):
     if((A>=B) and (C>=B) and ((C % gcd(A,B)) == 0) and (gcd(A,B) != 1)) :
         x, y = 0, (C/B)
         return (x, y)
+    elif(B == 1) :
+        x, y = 0, C
+        return (x, y)
     else :
         _gcd = gcd(A, gcd(B, C))
         A, B, C = A / _gcd, B / _gcd, C / _gcd
