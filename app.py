@@ -13,7 +13,7 @@ def kuttakaSolve(a, c, b):
         x, y = 0, (c/b)
         return (x, y)
     elif(B == 1) :
-        x, y = 0, c
+        x, y = 0, (c/b)
         return (x, y)
     else :
         _gcd = gcd(A, gcd(B, C))
