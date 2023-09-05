@@ -9,32 +9,36 @@ def gcd(a, b):
 
 def kuttakaSolve(a, c, b):
     A, B, C = abs(a), abs(b), abs(c)
-    _gcd = gcd(A, gcd(B, C))
-    A, B, C = A / _gcd, B / _gcd, C / _gcd
-    quot = []
-    rem = 0
-    d, s = A, B
-    while rem != 1:
-        rem = d % s
-        quot.append(d // s)
-        d, s = s, d % s
-    x, y = 0, C
-    for i in range(0, len(quot)):
-        x, y = y, quot[-(i + 1)] * y + x
-    if len(quot) % 2 != 0:
-        x, y = B - x, A - y
-    # resolving c
-    if c < 0:
-        x, y = B - x, A - y
-    # resolving a
-    if a < 0:
-        x, y = -x, y
-    # resolving b
-    if b < 0:
-        x, y = x, -y
-    q = min(x // B, y // A)
-    x, y = x - q * b, y - q * a
-    return (x, y)
+    if((A>=B) and (C>=B) and ((C % gcd(A,B)) == 0)) :
+        x, y = 0, (C/B)
+        return (x, y)
+    else :
+        _gcd = gcd(A, gcd(B, C))
+        A, B, C = A / _gcd, B / _gcd, C / _gcd
+        quot = []
+        rem = 0
+        d, s = A, B
+        while rem != 1:
+            rem = d % s
+            quot.append(d // s)
+            d, s = s, d % s
+        x, y = 0, C
+        for i in range(0, len(quot)):
+            x, y = y, quot[-(i + 1)] * y + x
+        if len(quot) % 2 != 0:
+            x, y = B - x, A - y
+        # resolving c
+        if c < 0:
+            x, y = B - x, A - y
+        # resolving a
+        if a < 0:
+            x, y = -x, y
+        # resolving b
+        if b < 0:
+            x, y = x, -y
+        q = min(x // B, y // A)
+        x, y = x - q * b, y - q * a
+        return (x, y)
 
 
 # Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
