@@ -10,7 +10,7 @@ def gcd(a, b):
 def kuttakaSolve(a, c, b):
     A, B, C = abs(a), abs(b), abs(c)
     if((A>=B) and (C>=B) and ((C % gcd(A,B)) == 0)) :
-        x, y = 1, ((A+C)/B)
+        x, y = 0, (C/B)
         return (x, y)
     else :
         _gcd = gcd(A, gcd(B, C))
